@@ -1,0 +1,9 @@
+flask==2.3.2
+requests==2.31.0
+Flask-injector==0.15.0
+python-dotenv
+sqlalchemy==2.0.23
+psycopg2-binary
+Deprecated==1.2.14
+APScheduler==3.10.4
+Flask-Cors==4.0.0

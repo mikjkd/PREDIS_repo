@@ -1,0 +1,16 @@
+*.asc
+*.csv
+*.zip
+*.xlsx
+/dati
+/.venv
+**/__pycache__
+
+.idea
+codice/backend/core/.env
+codice/backend/config/.example.predis.env
+codice/*.env
+
+codice/server/Contenuto SD_Card 09-02-2023/
+codice/server/dati/
+codice/backend/requested_files/*

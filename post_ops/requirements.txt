@@ -1,0 +1,5 @@
+PyJWT>=1.7.1
+sseclient>=0.0.26
+azure-storage-blob
+azure-identity
+python-dotenv
