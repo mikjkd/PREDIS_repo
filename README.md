@@ -40,3 +40,5 @@ This repository contains the implementation of the PREDIS system, which is desig
     ```bash
     python device_wifi_wrapper.py
    ```
+## License
+This project is licensed under the MIT License
