@@ -1,5 +1,5 @@
-from codice.backend.core.globalInjector import GlobalInjector
-from codice.backend.core.interfaces.DeviceInterface import DeviceInterface, State
+from backend.core.globalInjector import GlobalInjector
+from backend.core.interfaces.DeviceInterface import DeviceInterface, State
 
 
 class DevMap:

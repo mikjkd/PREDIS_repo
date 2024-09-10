@@ -1,6 +1,6 @@
 from enum import Enum
 
-from codice.backend.core.models.configuration import Configuration
+from backend.core.models.configuration import Configuration
 
 
 class State(Enum):

@@ -2,8 +2,8 @@ from typing import Union
 
 import requests
 
-from codice.backend.core.interfaces.ElectronicAPIInterface import DownloadFileEnum, ParamEnum, ThresholdName
-from codice.backend.core.interfaces.ElectronicAPIInterface import ElectronicAPIInterface
+from backend.core.interfaces.ElectronicAPIInterface import DownloadFileEnum, ParamEnum, ThresholdName
+from backend.core.interfaces.ElectronicAPIInterface import ElectronicAPIInterface
 
 
 class ElectronicAPI(ElectronicAPIInterface):

@@ -11,16 +11,16 @@ import dotenv
 import requests
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from codice.backend.core.electronicAPI import ElectronicAPI
-from codice.backend.core.globalInjector import GlobalInjector
-from codice.backend.core.interfaces.DeviceInterface import DeviceInterface, State
-from codice.backend.core.interfaces.ElectronicAPIInterface import ElectronicAPIInterface, DownloadFileEnum, ParamEnum
-from codice.backend.core.models.configuration import Configuration
-from codice.backend.core.models.device import Device
-from codice.backend.core.models.mercureManager import MercureManager, MercureMessage, MercureTopics
-from codice.backend.core.models.persistenceManager import PersistenceManager
-from codice.backend.core.registry import Registry
-from codice.backend.core.scheduler import Schedule, Scheduler
+from backend.core.electronicAPI import ElectronicAPI
+from backend.core.globalInjector import GlobalInjector
+from backend.core.interfaces.DeviceInterface import DeviceInterface, State
+from backend.core.interfaces.ElectronicAPIInterface import ElectronicAPIInterface, DownloadFileEnum, ParamEnum
+from backend.core.models.configuration import Configuration
+from backend.core.models.device import Device
+from backend.core.models.mercureManager import MercureManager, MercureMessage, MercureTopics
+from backend.core.models.persistenceManager import PersistenceManager
+from backend.core.registry import Registry
+from backend.core.scheduler import Schedule, Scheduler
 
 
 class DownloadType:

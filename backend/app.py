@@ -6,9 +6,9 @@ from flask_injector import FlaskInjector
 from flask_cors import CORS, cross_origin
 from injector import inject
 
-from codice.backend.core.core import PREDISCore, DownloadType
-from codice.backend.core.dependencies import configure
-from codice.backend.core.interfaces.ElectronicAPIInterface import ParamEnum
+from backend.core.core import PREDISCore, DownloadType
+from backend.core.dependencies import configure
+from backend.core.interfaces.ElectronicAPIInterface import ParamEnum
 
 
 def create_app():

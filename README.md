@@ -1,32 +1,42 @@
-Folder Structure:
+# PREDIS Repository
 
-- codice: 
-    - analisi_dati:
-      - script utilizzati per analizzare le misure delle schede
-    - backend:
-      - codice backend (nodo centrale)
-    - server:
-      - codice server scheda elettronica
-    - requirements.txt
+## Overview
 
-##analisi dati:
+This repository contains the implementation of the PREDIS system, which is designed for real-time monitoring and data acquisition from devices in nuclear waste management environments. The software architecture employs object-oriented design principles, with a focus on flexibility, scalability, and maintainability.
 
-##backend:
-Codice del nodo centrale.
-Lo scopo è quello di offrire due interfacce: da un lato le API per il frontend
-e dall'altro le API per l'elettronica.
+## Key Components
 
-![monolithic backend](images/monolithic_backend.jpg)
+- **Registry**: Manages dynamic device registration using the Singleton pattern, ensuring centralized control over device management.
+- **Core**: Acts as the coordination layer, handling communication between subsystems like scheduling, file management, and device interaction.
+- **DeviceInterface & ElectronicAPIs**: Provide abstraction for hardware communication, allowing flexibility in hardware interactions.
+- **Scheduler**: Manages operator-defined tasks such as data downloads and device configuration.
 
-I vari casi d'uso sono definiti dai sequence diagram:
+## Project Structure
 
-- Data is ready: il dispositivo elettronico è pronto a scambiare dati con il nodo centrale
-![](images/data_is_ready_sequence.jpg)
+- `backend/`: Contains the core backend logic, managing both frontend and electronic APIs.
+- `db/`: Database scripts and schema.
+- `post_ops/`: Post-processing scripts for handling collected data.
+- `predis-docker-compose.yml`: Docker configuration to run the system.
+- `device_wifi_wrapper.py`: Python replica of the device's firmware.
 
-- Device registration: il dispositivo elettronico si collega alla rete, registrandosi e ricevendo un ip
-![](images/device_registration.jpg)
+## Prerequisites
 
+- [Docker](https://www.docker.com/)
+- [docker-compose](https://docs.docker.com/compose/)
 
+## Usage
 
-##server:
+1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/mikjkd/PREDIS_repo.git
+   cd PREDIS_repo
+    ```
+2. Build and start the services using Docker Compose:
+    ```bash
+   docker-compose -f predis-docker-compose.yml up --build
+   ```
+3. Configure devices and let interact it with the Backend:
+    ```bash
+    python device_wifi_wrapper.py
+   ```

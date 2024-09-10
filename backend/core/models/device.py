@@ -1,8 +1,8 @@
 from injector import inject
 
-from codice.backend.core.interfaces.DeviceInterface import DeviceInterface, State
-from codice.backend.core.models.configuration import Configuration
-from codice.backend.core.models.coords import Coords
+from backend.core.interfaces.DeviceInterface import DeviceInterface, State
+from backend.core.models.configuration import Configuration
+from backend.core.models.coords import Coords
 
 
 # S0 = Spento

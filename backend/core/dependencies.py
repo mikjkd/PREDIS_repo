@@ -1,6 +1,6 @@
 from injector import singleton
 
-from codice.backend.core.core import PREDISCore
+from backend.core.core import PREDISCore
 
 
 def configure(binder):
