@@ -7,10 +7,8 @@
 **/__pycache__
 
 .idea
-codice/backend/core/.env
-codice/backend/config/.example.predis.env
-codice/*.env
+backend/core/.env
+backend/config/.example.predis.env
+*.env
 
-codice/server/Contenuto SD_Card 09-02-2023/
-codice/server/dati/
-codice/backend/requested_files/*
+requested_files/*
