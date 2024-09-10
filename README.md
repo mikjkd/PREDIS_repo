@@ -42,3 +42,7 @@ This repository contains the implementation of the PREDIS system, which is desig
    ```
 ## License
 This project is licensed under the MIT License
+
+## Acknowledgement
+This work has been financed within the framework of PREDIS (Pre-disposal management of radioactive waste, 
+Euratom research and training programme, grant agreement No 945098).
