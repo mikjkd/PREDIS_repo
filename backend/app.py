@@ -17,10 +17,6 @@ def create_app():
     app = Flask(__name__)
     cors = CORS(app)
 
-    @app.route("/")
-    def hello_world():
-        return "<p>Hello, World!</p>"
-
     @inject
     @app.get('/factory_reset')
     def factory_reset(core: PREDISCore):
