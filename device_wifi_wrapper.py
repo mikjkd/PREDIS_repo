@@ -1,7 +1,9 @@
 import _thread
 import datetime
 import json
+import os
 import time
+from dotenv import load_dotenv
 
 import requests
 from flask import Flask, send_file, jsonify, request
@@ -19,7 +21,7 @@ def home():
 @app.get("/DwnLastFile")
 def download_last_file():
     try:
-        return send_file('../../dati/nuovo formato/23-11-15_12-51')
+        return send_file(data_path)
     except Exception as e:
         print(e)
         return jsonify({'success': False}), 500, {'ContentType': 'application/json'}
@@ -29,7 +31,7 @@ def download_last_file():
 @app.get("/DwnFile")
 def download_file():
     try:
-        return send_file('dati/Dati Predis Analisi eventi/23-02-24_12-18.asc')
+        return send_file(data_path)
     except Exception as e:
         print(e)
         return jsonify({'success': False}), 500, {'ContentType': 'application/json'}
@@ -99,13 +101,16 @@ def run_app_thread():
 
 
 devname = '01X'
-port = 80 # use your port
+port = 80  # use your port
 curr_config = {"JsThrsValX": 200, "JsThrsValY": 200, "JsHVVal": 1300, "JsHVRead": 0, "JsAcqTime": 10000,
                "JsPreAcqTime": 15000, "JsDailyAlarm": "11:30",
                "JsCurrentTime": datetime.datetime.now().strftime("%Y-%m-%d %H:%M")}
-server_ip = '' # use your ip
+server_ip = ''  # use your ip
 
 if __name__ == '__main__':
+    load_dotenv()
+    data_path = os.environ.get("DATA_PATH")
+    ascii_data_path = os.environ.get("ASCII_DATA_PATH")
     try:
         _thread.start_new_thread(run_app_thread, ())
         _thread.start_new_thread(register_dev_thread, ())
