@@ -17,24 +17,19 @@ services:
       - MERCURE_HUB=$MERCURE_HUB
       - MERCURE_TOKEN=$MERCURE_TOKEN
     depends_on:
-    - db
+      - db
   db:
     image: postgres:14.3
     restart: always
     hostname: postgres
     environment:
       - POSTGRES_DB=$DB_NAME
-      # So you don't have to use root, but you can if you like
       - POSTGRES_USER=$DB_USER
-      # You can use whatever password you like
       - POSTGRES_PASSWORD=$DB_PASSWORD
-      # Password for root access
     ports:
       - '5432:5432'
     expose:
-      # Opens port 3306 on the container
       - '5432'
-      # Where our data will be persisted
     volumes:
       - /home/user/docker_volume/predis/db.sql:/docker-entrypoint-initdb.d/db.sql
       - postgres_volume:/var/lib/postgresql
@@ -57,8 +52,6 @@ services:
       - MERCURE_EXTRA_DIRECTIVES= |
         anonymous
         cors_origins *
-    # Uncomment the following line to enable the development mode
-    #command: /usr/bin/caddy run --config /etc/caddy/Caddyfile.dev
     ports:
       - '8001:80'
     volumes:

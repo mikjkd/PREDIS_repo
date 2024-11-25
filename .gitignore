@@ -10,5 +10,6 @@
 backend/core/.env
 backend/config/.example.predis.env
 *.env
+*ARM-*
 
 requested_files/*
